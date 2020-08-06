@@ -6,7 +6,7 @@ import scipy.stats as stats
 import pandas as pd
 
 
-data = loadtxt('two_trans.dat')
+data = loadtxt('Desktop/lv_data/multi_trans.dat')
 
 tot_pair = np.array(data[:, 0])
 eff_dir = np.array(data[:, 1])
