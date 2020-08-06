@@ -7,8 +7,8 @@ from numpy import loadtxt
 from astropy.io import fits
 
 
-data_P = loadtxt('zeeman_positive_red.dat')
-data_N = loadtxt('zeeman_negative_blue.dat')
+data_P = loadtxt('lv_data/zeeman_positive_red.dat')
+data_N = loadtxt('lv_data/zeeman_negative_blue.dat')
 
 Pos_x = np.array(data_P[:, 0])
 Pos_y = np.array(data_P[:, 1])
@@ -22,11 +22,11 @@ Neg_y = np.array(data_N[:, 1])
 
 
 
-data4 = loadtxt('spiralarm1.dat')
-data5 = loadtxt('spiralarm2.dat')
-data6 = loadtxt('spiralarm3.dat')
-data7 = loadtxt('spiralarm4.dat')
-data8 = loadtxt('spiralarm5.dat')
+data4 = loadtxt('lv_data/spiralarm1.dat')
+data5 = loadtxt('lv_data/spiralarm2.dat')
+data6 = loadtxt('lv_data/spiralarm3.dat')
+data7 = loadtxt('lv_data/spiralarm4.dat')
+data8 = loadtxt('lv_data/spiralarm5.dat')
 
 
 x4 = np.array(data4[:, 0])
