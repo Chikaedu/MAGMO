@@ -3,6 +3,7 @@ import matplotlib        as mpl
 import numpy as np
 from numpy import loadtxt
 import scipy.stats as stats
+import pandas as pd
 
 
 data = loadtxt('two_trans.dat')
