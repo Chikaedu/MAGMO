@@ -7,13 +7,16 @@ from numpy import loadtxt
 from astropy.io import fits
 
 
-data_P = loadtxt('Desktop/lv_data/zeeman_positive_red.dat')
-data_N = loadtxt('Desktop/lv_data/zeeman_negative_blue.dat')
+data_P    = loadtxt('zeeman_positive_red.dat')
+data_N    = loadtxt('zeeman_negative_blue.dat')
+data_Null = loadtxt('non_split.dat')
 
-Pos_x = np.array(data_P[:, 0])
-Pos_y = np.array(data_P[:, 1])
-Neg_x = np.array(data_N[:, 0])
-Neg_y = np.array(data_N[:, 1])
+Pos_x  = np.array(data_P[:, 0])
+Pos_y  = np.array(data_P[:, 1])
+Neg_x  = np.array(data_N[:, 0])
+Neg_y  = np.array(data_N[:, 1])
+Null_x = np.array(data_Null[:, 0])
+Null_y = np.array(data_Null[:, 1])
 
 
 
@@ -22,11 +25,11 @@ Neg_y = np.array(data_N[:, 1])
 
 
 
-data4 = loadtxt('Desktop/lv_data/spiralarm1.dat')
-data5 = loadtxt('Desktop/lv_data/spiralarm2.dat')
-data6 = loadtxt('Desktop/lv_data/spiralarm3.dat')
-data7 = loadtxt('Desktop/lv_data/spiralarm4.dat')
-data8 = loadtxt('Desktop/lv_data/spiralarm5.dat')
+data4 = loadtxt('spiralarm1.dat')
+data5 = loadtxt('spiralarm2.dat')
+data6 = loadtxt('spiralarm3.dat')
+data7 = loadtxt('spiralarm4.dat')
+data8 = loadtxt('spiralarm5.dat')
 
 
 x4 = np.array(data4[:, 0])
@@ -92,6 +95,7 @@ minor_yticks = np.arange(-120., 100., 20.)
 
 
 ## Axis 0
+ax[0].plot(Null_x, Null_y, 'k*', markersize=4, markeredgewidth=1.5, alpha=0.4, fillstyle='none', label=r'$No$ $Splitting$')
 ax[0].plot(Pos_x, Pos_y, 'ro', markersize=4, markeredgewidth=1.5, fillstyle='none', label=r'$Zeeman$ $positive$')
 ax[0].plot(Neg_x, Neg_y, 'b+', markersize=4, markeredgewidth=1.5, fillstyle='none', label=r'$Zeeman$ $negative$')
 ax[0].set_xlabel(r'\textbf{Longitude ($^{o}$)}', fontsize=16)
@@ -118,6 +122,7 @@ ax[0].invert_xaxis()
 
 
 ## Axis 1
+ax[1].plot(Null_x, Null_y, 'k*', markersize=4, markeredgewidth=1.5, alpha=0.4, fillstyle='none', label=r'$No$ $Splitting$')
 ax[1].plot(Pos_x, Pos_y,         'ro', markersize=4, markeredgewidth=1.5, fillstyle='none')
 ax[1].plot(Neg_x, Neg_y,       'b+', markersize=4, markeredgewidth=1.5, fillstyle='none')
 ax[1].plot(x4, y4,         'y-', lw=6, alpha=.45, label=r'$Norma$ $arm$')
